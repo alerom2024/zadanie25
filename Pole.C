@@ -5,6 +5,7 @@ float b=0;
 float c=0;
 float r=0;
 float h=0;
+int load=0;
 
 float obl_obj_prost(float a, float b, float c){
     return(a*b*c);
@@ -14,8 +15,7 @@ float obl_obj_walc(float r, float h){
     return(M_PI*pow(r, 2)* h);
 }
 
-int main(){
-
+void obs_obl_obj_prost(){
     printf("Podaj dlugosc prostopadloscianu:");
     scanf("%f", &a);
 
@@ -25,12 +25,34 @@ int main(){
     printf("Podaj wysokosc prostopadloscianu:");
     scanf("%f", &c);
     printf("Objetosc prostopadloscianu wynosi: %f", obl_obj_prost(a, b, c));
+}
 
+void obs_obl_obj_walc(){
     printf("\nPodaj promien walca:");
     scanf("%f", &r);
 
     printf("Podaj wysokosc walca:");
     scanf("%f", &h);
     printf("Objetosc walca wynosi: %f", obl_obj_walc(r, h));
+}
+
+void menu(){
+    printf("Wybierz operacje\n1-Obliczenie Objetosci Prostopadloscianu\n2-Obliczenie Objetosci Walca\n");
+    scanf("%d", &load);
+    switch(load){
+    case 1:
+        obs_obl_obj_prost();
+        break;
+    case 2:
+        obs_obl_obj_walc();
+        break;
+    default:
+        printf("Wprowadzono niepoprawna wartosc\n");
+        break;
+    }
+}
+
+int main(){
+    menu();
     return 0;
 }
