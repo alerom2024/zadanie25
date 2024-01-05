@@ -3,9 +3,15 @@
 float a=0;
 float b=0;
 float c=0;
+float r=0;
+float h=0;
 
 float obl_obj_prost(float a, float b, float c){
     return(a*b*c);
+}
+
+float obl_obj_walc(float r, float h){
+    return(M_PI*pow(r, 2)* h);
 }
 
 int main(){
@@ -19,5 +25,12 @@ int main(){
     printf("Podaj wysokosc prostopadloscianu:");
     scanf("%f", &c);
     printf("Objetosc prostopadloscianu wynosi: %f", obl_obj_prost(a, b, c));
+
+    printf("\nPodaj promien walca:");
+    scanf("%f", &r);
+
+    printf("Podaj wysokosc walca:");
+    scanf("%f", &h);
+    printf("Objetosc walca wynosi: %f", obl_obj_walc(r, h));
     return 0;
 }
